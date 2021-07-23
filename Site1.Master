@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="MyProject.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" >
+    <title></title>
+  
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+   </head>
+<style type="text/css">body, a:hover {cursor: url(http://cur.cursors-4u.net/nature/nat-2/nat120.cur), progress !important;}</style><a href="http://www.cursors-4u.com/cursor/2006/02/19/nat120.html" target="_blank" title="Weed - Marijuana"><img src="http://cur.cursors-4u.net/cursor.png" border="0" alt="Weed - Marijuana" style="position:absolute; top: 0px; right: 0px;" /></a>
+
+<body  background="s.jpg" style="background-size:100% 100%;background-attachment:scroll" >                  
+
+    <form id="form1" runat="server" method="post"  onsubmit="return valid()">
+     
+    <div dir="rtl" style="font-family:Tamir" >
+
+    <table  >  
+         <tr >
+         
+            <td rowspan="2" valign="top" style="width:50" >
+              <table> 
+              <%   var know = false;
+                  if (Session["so"] != null)
+                 {
+                     string u = (string)Session["so"];
+                     Response.Write("התחברת לאתר בהצלחה!" + u + " שלום");
+                     Response.Write("<input type='submit' name='yezia' value='התנתק'/>");
+                     know = true;
+                     Response.Write("<input type='button' name='button1' value='מחובר'  Style='background-color:green'");
+                     
+                   
+                 }
+
+                 else Response.Write(" <tr> <td>שם משתמש: </td></tr>" +
+             " <tr> <td><input type='text' name='username' /></td></tr>" +
+              "<tr> <td>  סיסמא:</td></tr> " +
+              " <tr><td><input type='password' name='password' /> </td></tr>" +
+              "<tr> <td>  הרשמה<input type='submit' name='sign'  value='הירשם'/></td></tr> " +
+              " <tr> <td> התחברות:<input type='submit' name='hithabrut'  value='התחבר'/> </td></tr>" +
+                " <tr> <td><input type='button' name='button' value='לא מחובר' Style='background-color:red'  /></td></tr>"); 
+                 know = false;
+              ;
+              if (b) Response.Write("לא קיים משתמש כזה");
+     
+                   %>
+             
+              <tr> <td>  <a href=HomePage.aspx><img  height="70" width="200" src="דףהבית.png" /></a> <br />  </td></tr>
+               <tr> <td> <a href=Albomim.aspx><img  height="70" width="200" src="כפתוראלבומים.png" /></a> <br /> </td></tr> 
+               <tr> <td> <a href=Rekaim.aspx><img  height="70" width="200" src="כפתוררקעים.png" /></a> <br />  </td></tr>
+                <tr> <td> <a href=Haverim.aspx><img  height="70" width="200" src="חבריהלהקה.png" /></a> <br />  </td></tr>
+                <tr> <td>  <a href=Shitufim.aspx><img  height="70" width="200" src="שיתופיפעולה.jpg" /></a> <br />  </td></tr>
+                 <tr> <td>  <a href=Sign.aspx><img  height="70" width="200" src="כפתורהרשמה.png" /></a> <br />  </td></tr>
+                 <tr> <td> <a href=Menael.aspx><img  height="70" width="200" src="כפתור.png" /></a> <br /></td></tr>  
+                  </table>
+            </td>
+            <td height="30" ><img style="text-align:center" height="100"  src="ללא שם.png"/><img  style="text-align:center" height="120"  width="140" src="הדג נחש.png"/> </td>
+         </tr>
+         <tr>
+           
+            <td >
+            <MARQUEE dir=rtl onmouseover=this.stop(); style="WIDTH:65; HEIGHT: 40; font-size:14px; font-family:Tamir; color:#FFFF33" 
+           onmouseout=this.start(); scrollAmount=1.5 direction=up>ברוכים הבאים לאתר המקורי של הדג הנחש
+           .באתר תוכלו למצוא מידע על הדג נחש הפתוח לכולם ומידע לרשומים בלבד. בכדי להירשם לאתר יש ללחוץ על דף ההרשמה או על כפתור הירשם בצד ימין של הדף
+           אני מקווה שתהנו מהאתר, מנהלת האתר, כרמל.
+         
+           </MARQUEE>
+           
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        
+            </td>
+         </tr>
+        
+          </table>
+    </div>
+   
+    </form>
+           
+</body>
+</html>
